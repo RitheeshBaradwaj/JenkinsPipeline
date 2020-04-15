@@ -1,5 +1,5 @@
 pipeline {
-  agent { docker { image 'python:3.7-slim' } }
+  agent any
   stages {
     stage('Build Stage') {
       steps {
