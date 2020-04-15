@@ -26,6 +26,7 @@ pipeline {
             }
         }
     }
+  }
   post {
         always {
             echo 'We came to an end!'
