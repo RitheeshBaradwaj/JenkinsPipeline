@@ -32,17 +32,12 @@ stage('Deployment Stage'){
   post {
         always {
             echo 'We came to an end!'
-            deleteDir() /* clean up our workspace */
-        }
+         }
         success {
-        mail to: 'bunnyrb4@gmail.com',
-             subject: "The pipeline ${currentBuild.fullDisplayName} completed successfully.",
-             body: "Everything is working normally"
+          echo 'Build Successfull!!'
     }
         failure {
-        mail to: 'bunnyrb4@gmail.com',
-             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-             body: "Something is wrong with ${env.BUILD_URL}"
+        echo 'Sorry mate! build is Failed :('
     }
         unstable {
             echo 'Run was marked as unstable'
