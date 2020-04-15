@@ -4,14 +4,14 @@ pipeline {
     stage('Build Stage') {
       steps {
         echo '********* Build Stage Started **********'
-        sh 'pip install -r requirements.txt'
+        bat 'pip install -r requirements.txt'
         echo '********* Build Stage Finished **********'
         }
     }
     stage('Testing Stage') {
       steps {
         echo '********* Test Stage Started **********'
-        sh 'python test.py'
+        bat 'python test.py'
         echo '********* Test Stage Finished **********'
       }   
     }
@@ -24,7 +24,7 @@ stage('Deployment Stage'){
             steps{
                 input "Do you want to Deploy the application?"
                 echo '********* Deploy Stage Started **********'
-                sh 'python app.py'
+                bat 'python app.py'
                 echo '********* Deploy Stage Finished **********'
             }
     }
