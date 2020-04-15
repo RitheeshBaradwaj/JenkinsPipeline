@@ -5,9 +5,7 @@ pipeline {
     {
       steps{
         echo '********* Cleaning Workspace Stage Started **********'
-        bat 'cd test-reports'
-        bat "del /q test-reports\*"
-        bat 'cd ..'
+        bat "del /q test-reports/*
         echo '********* Cleaning Workspace Stage Finished **********'
       }
     }
