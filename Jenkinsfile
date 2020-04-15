@@ -24,7 +24,7 @@ stage('Deployment Stage'){
             steps{
                 input "Do you want to Deploy the application?"
                 echo '********* Deploy Stage Started **********'
-                timeout(time : 1, unit : 'MINUTTES')
+                timeout(time : 1, unit : 'MINUTES')
                 {
                 bat 'python app.py'
                 }
