@@ -39,7 +39,7 @@ stage('Deployment Stage'){
              subject: "The pipeline ${currentBuild.fullDisplayName} completed successfully.",
              body: "Everything is working normally"
     }
-        failure failure {
+        failure {
         mail to: 'bunnyrb4@gmail.com',
              subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
              body: "Something is wrong with ${env.BUILD_URL}"
