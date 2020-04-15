@@ -15,28 +15,35 @@ pipeline {
         echo '********* Test Stage Finished **********'
       }   
     }
-    if(currentBuild.currentResult == 'SUCCESS')
-    {
-        stage('Deployment Stage'){
+    stage('Sanity check') {
+            steps {
+                input "Does the staging environment look ok?"
+            }
+     }
+stage('Deployment Stage'){
             steps{
                 input "Do you want to Deploy the application?"
                 echo '********* Deploy Stage Started **********'
                 sh 'python app.py'
                 echo '********* Deploy Stage Finished **********'
             }
-        }
     }
   }
   post {
         always {
             echo 'We came to an end!'
+            deleteDir() /* clean up our workspace */
         }
         success {
-            echo 'Build is Successfull !'
-        }
-        failure {
-            echo 'Sorry mate! Build is Failed! :('
-        }
+        mail to: 'bunnyrb4@gmail.com',
+             subject: "The pipeline ${currentBuild.fullDisplayName} completed successfully.",
+             body: "Everything is working normally"
+    }
+        failure failure {
+        mail to: 'bunnyrb4@gmail.com',
+             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+             body: "Something is wrong with ${env.BUILD_URL}"
+    }
         unstable {
             echo 'Run was marked as unstable'
         }
