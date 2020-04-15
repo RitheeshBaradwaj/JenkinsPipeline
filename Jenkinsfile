@@ -1,6 +1,16 @@
 pipeline {
   agent any
   stages {
+    stage('Clean Reports')
+    {
+      steps{
+        echo '********* Cleaning Workspace Stage Started **********'
+        bat 'cd test-reports'
+        bat 'del *'
+        bat 'cd ..'
+        echo '********* Cleaning Workspace Stage Finished **********'
+      }
+    }
     stage('Build Stage') {
       steps {
         echo '********* Build Stage Started **********'
@@ -35,7 +45,6 @@ stage('Deployment Stage'){
   post {
         always {
             echo 'We came to an end!'
-            deleteDir()
          }
         success {
           echo 'Build Successfull!!'
