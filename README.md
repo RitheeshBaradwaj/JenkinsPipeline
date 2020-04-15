@@ -1,2 +1,2 @@
 # JenkinsPipeline-Example
-A simple application was developed to understand the Jenkins Pipeline
+A simple application is developed to understand the Jenkins Pipeline
