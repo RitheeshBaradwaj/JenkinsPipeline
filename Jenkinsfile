@@ -35,6 +35,7 @@ stage('Deployment Stage'){
   post {
         always {
             echo 'We came to an end!'
+            deleteDir()
          }
         success {
           echo 'Build Successfull!!'
