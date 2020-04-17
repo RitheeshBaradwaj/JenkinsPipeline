@@ -13,6 +13,7 @@ pipeline {
       steps {
         echo '********* Build Stage Started **********'
         bat 'pip install -r requirements.txt'
+        jfrog rt pip-install -r requirements.txt --build-name=my-build --build-number=1
         echo '********* Build Stage Finished **********'
         }
     }
