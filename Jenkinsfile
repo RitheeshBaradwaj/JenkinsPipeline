@@ -66,6 +66,7 @@ stage('Deployment Stage'){
             {
               bat 'jfrog rt u "dist/*.exe" generic-local'
             }
+          }
           
             
             deleteDir()
