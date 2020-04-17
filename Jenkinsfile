@@ -34,8 +34,8 @@ pipeline {
              id: 'userInput', message: 'Enter password for Artifactory', parameters: [
              
              [$class: 'TextParameterDefinition', defaultValue: 'password', description: 'Artifactory Password', name: 'password']])
-              echo 'P : '+userInput
-             bat 'jfrog rt c artifactory-demo --url=http://34.68.191.118:8081/artifactory --user=admin --password=+'userInput
+             
+             bat 'jfrog rt c artifactory-demo --url=http://34.68.191.118:8081/artifactory --user=admin --password='+userInput
              
           echo '********* Configure Stage Finished **********'
         }
@@ -66,7 +66,9 @@ stage('Deployment Stage'){
           script{
             if(currentBuild.currentResult=='SUCCESS')
             {
+              echo '********* Uploading app.exe to Artifactory Started **********'
               bat 'jfrog rt u "dist/*.exe" generic-local'
+              echo '********* Uploading app.exe to Artifactory Finished **********'
             }
           }
           
