@@ -51,9 +51,9 @@ stage('Deployment Stage'){
   post {
         always {
             echo 'We came to an end!'
-            archiveArtifacts artifacts: 'test-reports/*.xml', fingerprint: true
+            archiveArtifacts artifacts: 'dist/*.exe', fingerprint: true
             junit 'test-reports/*.xml'
-            bat 'jfrog rt u "test-reports/*.xml" generic-local'
+            bat 'jfrog rt u "dists/*.exe" generic-local'
 
          }
         success {
