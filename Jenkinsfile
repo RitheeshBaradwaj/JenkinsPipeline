@@ -66,9 +66,9 @@ stage('Deployment Stage'){
           script{
             if(currentBuild.currentResult=='SUCCESS')
             {
-              echo '********* Uploading app.exe to Artifactory Started **********'
+              echo '********* Uploading to Artifactory is Started **********'
               bat 'jfrog rt u "dist/*.exe" generic-local'
-              echo '********* Uploading app.exe to Artifactory Finished **********'
+              echo '********* Uploading Finished **********'
             }
           }
           
