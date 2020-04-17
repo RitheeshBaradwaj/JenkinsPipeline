@@ -13,8 +13,6 @@ pipeline {
       steps {
         echo '********* Build Stage Started **********'
         bat 'pip install -r requirements.txt'
-        bat 'jfrog rt c artifactory-demo --url=http://34.68.191.118:8081/artifactory --user=admin --password=rit4@1999'
-        bat 'jfrog rt pip-install -r requirements.txt --build-name=my-build --build-number=1'
         echo '********* Build Stage Finished **********'
         }
     }
