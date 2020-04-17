@@ -9,13 +9,7 @@ pipeline {
         echo '********* Cleaning Workspace Stage Finished **********'
       }
     }
-    stage('Configure Artifactory'){
-      steps{
-        echo '********* Configure Stage Started **********'
-        bat 'jfrog rt c artifactory-demo --url=http://34.68.191.118:8081/artifactory --user=admin --password=rit4@1999'
-        echo '********* Configure Stage Finished **********'
-      }
-    }
+    
     stage('Build Stage') {
       steps {
         echo '********* Build Stage Started **********'
@@ -30,6 +24,20 @@ pipeline {
         bat 'python test.py'
         echo '********* Test Stage Finished **********'
       }   
+    }
+    stage('Configure Artifactory'){
+      steps{
+        script {
+          
+          echo '********* Configure Stage Started **********'
+             def userInput = input(
+             id: 'userInput', message: 'Enter password for Artifactory', parameters: [
+             
+             [$class: 'TextParameterDefinition', defaultValue: 'password', description: 'Artifactory Password', name: 'password']]
+             bat 'jfrog rt c artifactory-demo --url=http://34.68.191.118:8081/artifactory --user=admin --password=+'userInput
+          echo '********* Configure Stage Finished **********'
+        }
+       }
     }
     stage('Sanity check') {
             steps {
@@ -53,7 +61,13 @@ stage('Deployment Stage'){
             echo 'We came to an end!'
             archiveArtifacts artifacts: 'dist/*.exe', fingerprint: true
             junit 'test-reports/*.xml'
-            bat 'jfrog rt u "dist/*.exe" generic-local'
+          script{
+            if(currentBuild.currentResult=='SUCCESS')
+            {
+              bat 'jfrog rt u "dist/*.exe" generic-local'
+            }
+          
+            
             deleteDir()
 
          }
