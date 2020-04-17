@@ -9,6 +9,13 @@ pipeline {
         echo '********* Cleaning Workspace Stage Finished **********'
       }
     }
+    stage('Configure Artifactory'){
+      steps{
+        echo '********* Configure Stage Started **********'
+        bat 'jfrog rt u artifactory-demo --url=http://34.68.191.118:8081/artifactory --user=admin --password=rit4@1999
+        echo '********* Configure Stage Finished **********'
+      }
+    }
     stage('Build Stage') {
       steps {
         echo '********* Build Stage Started **********'
