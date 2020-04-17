@@ -45,7 +45,6 @@ stage('Deployment Stage'){
             echo 'We came to an end!'
             archiveArtifacts artifacts: 'test-reports/*.xml', fingerprint: true
             junit 'test-reports/*.xml'
-            echo 'oooooooooooooo'
 
          }
         success {
