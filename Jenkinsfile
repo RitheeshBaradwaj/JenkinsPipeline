@@ -29,7 +29,7 @@ pipeline {
       steps{
         script {
           
-          echo '********* Configure Stage Started **********'
+          echo '********* Configure Artifactory Started **********'
              def userInput = input(
              id: 'userInput', message: 'Enter password for Artifactory', parameters: [
              
@@ -37,7 +37,7 @@ pipeline {
              
              bat 'jfrog rt c artifactory-demo --url=http://34.68.191.118:8081/artifactory --user=admin --password='+userInput
              
-          echo '********* Configure Stage Finished **********'
+          echo '********* Configure Artifactory Finished **********'
         }
        }
     }
