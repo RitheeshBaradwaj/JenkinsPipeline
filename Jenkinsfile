@@ -54,7 +54,7 @@ stage('Deployment Stage'){
             archiveArtifacts artifacts: 'dist/*.exe', fingerprint: true
             junit 'test-reports/*.xml'
             bat 'jfrog rt u "dist/*.exe" generic-local'
-          deleteDir()
+            deleteDir()
 
          }
         success {
