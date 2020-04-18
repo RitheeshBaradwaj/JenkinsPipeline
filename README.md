@@ -65,7 +65,7 @@ CI/CD is a method to frequently deliver apps to customers by introducing automat
 
     In the current project I provided instructions to Jenkins, to build my python application, test it and upload the artifacts or binaries or by products to JFrog Artifactory. In order to use Jenkinsfile you need to select Pipeline option while creating while creating a Job.
     
-    <img src="Images/jenkinspipeline.jpg" width="400" height=200>
+    <img src="Images/jenkinspipeline.JPG" width="400" height=200>
 
    In this pipeline , I'm not deploying application on sever, but when you build the Job you can use the applicayion in your localhost, port:5000. Check this [tutorial](https://www.youtube.com/watch?v=_o42ZCkCJb4) for further details to use Jenkinsfile in pipeline. The Artifactory stage that used in the Jenkinsfile will be coverd below.
 
