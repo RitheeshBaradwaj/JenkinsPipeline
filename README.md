@@ -58,7 +58,7 @@ CI/CD is a method to frequently deliver apps to customers by introducing automat
     - You can install [Jenkins](https://jenkins.io/download/) on your host and run it as a service.
     - Create a Job on Jenkins using this [tutorial.](https://www.youtube.com/watch?v=RR0LabeUQ88) Also try to link Jenkins with your GitHub repository. While creating the Job add your GitHub repository url as shown below in the Source Management section.
 
-        <img src="Images/jenkins-github.jpg" width="400" height=250>
+        <img src="Images/jenkins-github.JPG" width="400" height=250>
     - You can also configure Jenkins to build everytime you push changes to your repository in the Build Triggers section.
     - To tell Jenkins server to perform certain tasks i.e, to automate build, test and deploy (we can include any other stages) we often write instructions to be followed by Jenkins server in Jenkinsfile. To use this you need to install Pipeline plugin on Jenkins
     - [Jenkins Pipeline](https://jenkins.io/doc/pipeline/tour/getting-started/) is a suite of plugins which supports implementing and integrating continuous delivery pipelines into Jenkins. A continuous delivery pipeline is an automated expression of your process for getting software from version control right through to your users and customers. Jenkins Pipeline provides an extensible set of tools for modeling simple-to-complex delivery pipelines "as code". The definition of a Jenkins Pipeline is typically written into a text file (called a Jenkinsfile) which in turn is checked into a project’s source control repository.
