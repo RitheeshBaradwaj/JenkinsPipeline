@@ -1,6 +1,6 @@
 # DevOps Pipeline <a href="https://en.wikipedia.org/wiki/DevOps" ><img src="Images/devops.jpg" width="50" height=30></a>
 - ## Background
-   Before getting started, [click here](https://github.com/RitheeshBaradwaj/JenkinsPipeline/tree/master/Introduction) if you      want to know what is <b>Continous Integration. </b> <br>
+   Before getting started, [click here](https://github.com/RitheeshBaradwaj/JenkinsPipeline/tree/master/Introduction) if you      want to know what is <b>CI/CD</b> <br>
    CI/CD is a method to frequently deliver apps to customers by introducing automation into the stages of app development. The main        concepts attributed to CI/CD are continuous integration, continuous delivery, and continuous deployment. CI/CD pipelines are designed    for businesses that want to improve applications frequently and require a reliable delivery process. The added effort to standardize    builds, develop tests, and automate deployments is the manufacturing process for deploying code changes.
    <br>
    <img src="Images/DevOpsImage.jpg" width="500" height="300">
