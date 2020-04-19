@@ -92,7 +92,7 @@ CI/CD is a method to frequently deliver apps to customers by introducing automat
     ```
     - To upload a file to a repository. Here gernic-local is a miscellaneous repository name, you can check it on console.
     ```
-    jfrog rt u "path to ypur file" generic-local
+    jfrog rt u "path to your file" generic-local
     ```
     Visit [JFrog CLI](https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory) for more commands.
 
