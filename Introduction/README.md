@@ -30,3 +30,4 @@ The use of [<b>GitHub</b>](https://en.wikipedia.org/wiki/GitHub) since its incep
     Therefore, Jenkins is a free and open-source automation server that helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration and continuous delivery (CI/CD).
 
 - ## Thank you :D
+  I would like to thank @saadia-hassan for helping me with the content.
