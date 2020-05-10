@@ -25,5 +25,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: ip
+      run: dig +short myip.opendns.com @resolver1.opendns.com
+    - name: ip2
+      run: dig TXT +short o-o.myaddr.l.google.com @ns1.google.com
     - name: Lint with flake8
       run: python app.py
