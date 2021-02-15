@@ -107,4 +107,4 @@
     - [Jenkins](https://www.vogella.com/tutorials/Jenkins/article.html)
     - [JFrog Artifactory](https://www.youtube.com/watch?v=WrKEozY9efQ)
 - ## Thank you :D
-    I have used many online resources while creating the application and I would like to thank them. As I'm also in a learning stage, I would like to know your feedback and suggestions as well. So please contact me at: bunnyrb4@gmail.com. 
+    I have used many online resources while creating the application and I would like to thank them. As I'm also in a learning stage, I would like to know your feedback and suggestions as well. So please contact me at: ritheeshbaradwaj@gmail.com. 
