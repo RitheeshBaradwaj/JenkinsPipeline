@@ -67,7 +67,8 @@ stage('Deployment Stage'){
             if(currentBuild.currentResult=='SUCCESS')
             {
               echo '********* Uploading to Artifactory is Started **********'
-              bat 'jfrog rt u "dist/*.exe" generic-local'
+              /*bat 'jfrog rt u "dist/*.exe" generic-local'*/
+              bat 'Powershell.exe -executionpolicy remotesigned -File build_script.ps1'
               echo '********* Uploading Finished **********'
             }
           }
