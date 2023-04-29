@@ -1,2 +1,2 @@
-xmlrunner==1.7.7
-Flask==1.0
+xmlrunner
+Flask
